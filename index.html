@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Joey's Personal Website</title>
+    <title>Joey S.C. Lee - Vancouver, BC, Canada</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,11 +45,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Joey S.C. Lee</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><p style="margin-left: 100px;">Joey S.C. Lee</p></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right"style=" margin-right: 100px;">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -72,10 +72,8 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="top">
-            <h1>Hi, this is Joey!</h1>
-            <h3>
-                <span style="display:inline-block; width: 600;">Software Developer &nbsp;&middot;&nbsp; Mechanical Engineer</span>
-            </h3>
+            <h1 style="position: relative; top: -100px; font-size: 5em; font-weight: 700;">Hi, this is Joey!</h1>
+            <h3 style="position: relative;top: -50px;font-size: 2em; font-weight: 500;"><span style="display:inline-block; width: 600;">Software Developer &nbsp;&middot;&nbsp; Mechanical Engineer</span></h3>
             <br>
         </div>
     </header>
@@ -84,12 +82,11 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="about-me" style= "font-size: 3em; font-weight: 600;">
+                <div class="span text-center">
+                    <div class="about" style= "font-size: 3em; font-weight: 600;">
                         <h1>About Me</h1>
-                        <hr class="star-light">
-                        <p class="lead"> I am a UBC mechanical engineer grad. who has returned back to school to pursue the exciting field of computer science and software engineering. As a hands-on individual who loves to innovate and create, there really is no better industry to be in. <br> My main areas of interest include competitive programming, machine learning, and heuristic algorithms for search/optimization.</p>
-                        <p class="lead"> PS: An interesting fact that you may not know about me is that I am a cheerleader!</p>
+                        <hr class="section-heading-divider">
+                        <p class="text-justify" style= "font-size: 0.5em;"> I am a UBC mechanical engineer grad. who has returned back to school to pursue the exciting field of computer science and software engineering. I absolutely love programming and constantly crave to innovate and create. <br> My main areas of interest include machine learning, schotastic search/optimization methods, or simply making cool things! <br><br> PS: An interesting fact that you may not know about me is that I am a cheerleader!</p>
                     </div>
                 </div>
             </div>
@@ -99,15 +96,14 @@
     </section>
 
     <!-- Education -->
-
     <section class="education" id="education">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
+          <div class="span text-center">
             <h1>Education</h1>
-            <hr class="star-light">
           </div>
         </div>
+        <hr class="section-heading-divider">
 
         <div class="row">
           <div class="col-lg-4">
@@ -117,11 +113,9 @@
               <div class="col-lg-8">
                 <h3>University of British Columbia</h3>
                 <p>Bridging Modules in Mathematics&nbsp;&amp;&nbsp;Statistics</p>
-            </div>
         </div>
-
+            </div>
         <div>&nbsp;</div>
-
         <div class="row">
             <div class="col-lg-4">
                 <h3>Bachelor of Applied Science</h3>
@@ -134,54 +128,87 @@
         </div>
     </section>
 
-<!-- Portfolio -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h1>Technical Projects</h1>
-                <hr class="small">
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Technical Projects</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="section-heading-divider">
+
+        <div class="content-section-a">
+
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="well">
-                            <h3>GoogleMaps Travelling Salesman Solver</h3>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" allowfullscreen="" src="http://www.youtube.com/embed/dWSsLfAIHDA"></iframe>
-                            </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Travelling Salesman Solver</h2>
+                        <p class="lead">Solving the famous Travelling Salesman problem using Simulated Annealing and Genetic Algorithm on GoogleMaps. <br><br>
+                            Platform: Android</p>
+                        <div class="portfolio-caption">
                             <a href="https://github.com/joeyscl/GoogleMaps_TSP"><h4> Source Code </h4></a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="well">
-                            <h3>Self-balancing Robot</h3>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" allowfullscreen="" src="http://www.youtube.com/embed/IHtKe6i4GeU"></iframe>
-                            </div>
-                            <a href="https://github.com/joeyscl/Joey-s-Self-Balancing-Robot"><h4> Source Code </h4></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                    <div class="col-lg-5 col- col-sm-6">
+                        <div class=" portfolio-item">                        
+                            <a href="#portfolioModal1" class="portfolio-link" style="max-width: 300px;"data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/TSP_main.png" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="content-section-b">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Self-Balancing Robot</h2>
+                        <p class="lead"> A robot that can balance on two wheels, even when disturbed by external force. <br><br>
+                            Platform: C/C++</p>
+                        <div class="portfolio-caption">
+                            <a href="https://github.com/joeyscl/Joey-s-Self-Balancing-Robot"><h4> Source Code </h4></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-sm-pull-6 col-sm-6">
                         <div class="portfolio-item">
-                            <a href="#">
-                                <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img src="img/portfolio/robot.jpg" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- /.col-lg-10 -->
+            <!-- /.container -->
+
         </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
+        <!-- /.content-section-b -->
+    </section>
+
 
     <!-- Footer -->
     <footer id="contact">
@@ -190,7 +217,7 @@
                 <div class="span text-center">
                     <h2 style="font-size: 3em;;"><strong>Contact Me</strong>
                     </h2>
-                    <hr class="star-light">
+                    <hr class="section-heading-divider">
                     <ul class="list-inline">
                         <li>
                           <a lass="btn-social btn-outline" style="color: white;">
@@ -257,6 +284,156 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="js/creative.js"></script>
+
+
+<!-- Portfolio Modals -->
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content" style="background-color: #f4f4f4;">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Travelling Salesman Solver</h2>
+                            <hr class="section-heading-divider">
+
+
+                            <ul class="nav nav-pills">
+                                <li class="active"><a data-toggle="pill" href="#modal1-tab1">Video Demo</a></li>
+                                <li><a data-toggle="pill" href="#modal1-tab2">Gallery</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+
+                                <!-- VIDEO DEMO TAB -->
+                                <div id="modal1-tab1" class="tab-pane fade in active">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" allowfullscreen="" src="http://www.youtube.com/embed/iaTK1Ozie9c"></iframe>
+                                    </div>
+                                </div>
+
+                                <!-- GALLERY TAB -->
+                                <div id="modal1-tab2" class="tab-pane fade">
+
+                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                                    <!-- Slider Content (Wrapper for slides )-->
+                                    <div class="carousel-inner">
+
+                                        <div class="item active">
+                                            <h3>Initial random route</h3>
+                                            <img class="img-responsive center-block" src="img/portfolio/TSP_start.png" alt="Initial Route">
+                                        </div>
+
+                                        <div class="item">
+                                            <h3>Optimizing...</h3>
+                                            <img class="img-responsive center-block" src="img/portfolio/TSP_prog1.png" alt="Optimizing...">
+                                        </div>
+
+                                        <div class="item">
+                                            <h3>Optimizing...</h3>
+                                            <img class="img-responsive center-block" src="img/portfolio/TSP_prog2.png" alt="Optimizing...">
+                                        </div>
+                                        <div class="item">
+                                            <h3>Final result</h3>
+                                            <img class="img-responsive center-block" src="img/portfolio/TSP_finish.png" alt="Final result">
+                                        </div>
+                                        <div class="item">
+                                            <h3>Options Menu</h3>
+                                            <img class="img-responsive center-block" src="img/portfolio/TSP_options.png" alt="Options Menu">
+                                        </div>
+                                    </div>
+
+                                        <!-- Crousel indicators -->
+                                    <br>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                    </ol>
+
+
+                                    <!-- Controls -->
+                                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a>
+                                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                            <h4 class="text-justify"> The Travelling Salesman Problem is one of the most famous problems in computer science: To find the shortest path to visit each destination exactly once. <br> I have implemented genetic algorthm and simulated annealing in my Android Application to find almost-optimal solutions quickly. <br> In the video demo I was able to get a decent result for a 30 destination problem in less than 20 seconds.
+                            <br>Special creds. to <a href="http://www.theprojectspot.com/home">the Project Spot</a></h4>
+
+                            <ul class="list-inline">
+                                <li>Date: July 2015</li>
+                                <li>Categories: Android, Travelling Salesman, Optimization</li>
+                            </ul>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content" style="background-color: #f4f4f4;">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>Self-balancing Robot</h2>
+                                <hr class="section-heading-divider">
+
+
+                                <!-- VIDEO DEMO TAB -->
+                                <div id="modal1-tab1" class="tab-pane fade in active">
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <iframe class="embed-responsive-item" allowfullscreen="" src="http://www.youtube.com/embed/IHtKe6i4GeU"></iframe>
+                                    </div>
+                                </div>
+                                   
+                                <br>
+                                <h4 class="text-justify"> I built a self balancing robot using the Arduino microcontroller platform, which runs on C/C++. <br>
+                                    I implemented the PID (propotional-integral-derivative) control algorithm to balance the robot, as well as implemented additional libraries for sensor digital signal processing.<br>
+                                    Other parts used include the MPU6050 motion sensor, and motors and wheels found commonly in hooby shops.</h4>
+
+                                <ul class="list-inline">
+                                    <li>Date: May 2015</li>
+                                    <li>Categories: C/C++, Arduino, Control Theory</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 
 </body>
 
