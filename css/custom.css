@@ -436,6 +436,13 @@ hr.small {
     background-color: orange;
 }
 
+section.success {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    color: #fff;
+    background: #3D5974;
+}
+
 /* Footer */
 footer{
 }
@@ -449,6 +456,7 @@ footer .footer-above{
 
 footer .footer-below{
     padding: 15px;
-    background-color: #233140;
-    color: white;
+    font-size: 1.1em;
+    background-color: #e7e7e7;
+    color: black;
 }
