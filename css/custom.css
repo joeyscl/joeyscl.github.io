@@ -270,7 +270,7 @@ hr.small {
     }
 }
 
-@media only screen and (max-width: 991px) {
+/*@media only screen and (max-width: 991px) {
     #showhide1 {
         display: none;
     }
@@ -280,7 +280,7 @@ hr.small {
     #showhide2 {
         display: none;
     }
-}
+}*/
 
 /*@media only screen and (max-width: 991px) {
     #showhide2 {
