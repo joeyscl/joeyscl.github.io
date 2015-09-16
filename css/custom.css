@@ -149,7 +149,7 @@ hr.small {
     .navbar-default {
         border-color: rgba(255,255,255,.3);
         background-color: transparent;
-        padding: 0.5em;
+        /*padding: 0.5em;*/
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -260,6 +260,33 @@ hr.small {
 }
 
 /* Portfolio */
+
+@media only screen and (max-width: 767px) {
+    #showhide0 {
+        display: none;
+    }
+    #showhide2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    #showhide1 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    #showhide2 {
+        display: none;
+    }
+}
+
+/*@media only screen and (max-width: 991px) {
+    #showhide2 {
+        display: block;
+    }
+}*/
 
 .portfolio {
     padding-left: 10px;
