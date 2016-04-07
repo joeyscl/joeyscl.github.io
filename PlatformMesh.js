@@ -11,15 +11,15 @@ THREE.PlatformMesh = function (geometry, material) {
 
 	//determine velocity
 	if (allObstacles.length <= 5) {
-		this.velocity = 0.25;
+		this.velocity = 0.35;
 	} else if (allObstacles.length <= 10) {
 		this.velocity = (Math.random() * 0.25) + 0.25;
 	} else if (allObstacles.length <= 15) {
-		this.velocity = (Math.random() * 0.25) + 0.5;
+		this.velocity = (Math.random() * 0.35) + 0.35;
 	} else if (allObstacles.length <= 20) {
 		this.velocity = (Math.random() * 0.5) + 0.5;
 	} else {
-		this.velocity = (Math.random() * 0.75) + 0.25;
+		this.velocity = (Math.random() * 0.75) + 0.5;
 	}
 
 	this.moveDirection = Math.floor(Math.random() * 5); // 0,1 = stationary, 2 = move X, 3 = move Y, 4 = move Z
