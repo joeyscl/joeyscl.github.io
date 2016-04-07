@@ -16,7 +16,7 @@ THREE.PlayerMesh = function (geometry, material) {
 	this.maxJumps = 2;		// number of jumps allowed
 	this.jumpCounter = 0;	// current number of jumps
 	this.gravity = -10;
-	this.maxV = 300		// max velocity in any direction
+	this.maxV = 600		// max velocity in any direction
 
 	this.floorHeight = this.size*2-1.1;
 	this.platformHeight = this.floorHeight;
@@ -69,13 +69,18 @@ THREE.PlayerMesh.prototype.constructor = THREE.PlayerMesh;
 THREE.PlayerMesh.prototype.jump = function () {
 	var Vy = this.velocity.y
 	if (this.jumpCounter < this.maxJumps) {
-		this.velocity.setY(300);
+		this.velocity.setY(350);
 		this.jumpCounter += 1;
 	}	
 }
 
 THREE.PlayerMesh.prototype.updateVelocity = function () {
-	var Vy = Math.min(this.velocity.y + this.gravity, this.maxV);
+	var Vy
+	if (this.velocity.y > 0) {
+		var Vy = Math.min(this.velocity.y + this.gravity, this.maxV);
+	} else {
+		var Vy = Math.max(this.velocity.y + this.gravity, -this.maxV);
+	}
 	var Cy = this.collisions.y;
 
 	// change velocities to 0 when object hits obstacle
@@ -113,27 +118,27 @@ THREE.PlayerMesh.prototype.CollisionCheck = function () {
 	  collisions = this.caster.intersectObjects(allObstacles);
 	  // And flag for collision if we do
 	  if (collisions.length > 0 && collisions[0].distance <= this.size) {
-	    if ([0,10,11,13,15].indexOf(i) != -1) {
+	    if ([0].indexOf(i) != -1) {
 	    	this.collisions.setY(-1);
 	    	this.platformHeight = collisions[0].point.y; //set height of current platform
 	    	this.translateY(this.size-collisions[0].distance);		//shift player so it's just touching the edge 
-	    } else if ([1,8,9,12,14].indexOf(i) != -1) {
+	    } else if ([1].indexOf(i) != -1) {
 	    	this.collisions.setY(1);
 	    	this.translateY(-(this.size-collisions[0].distance));	//shift player so it's just touching the edge 
 	    }
 
-	    if ([2].indexOf(i) != -1) {	    	
+	    if ([2,8,9,16,17].indexOf(i) != -1) {	    	
 	    	this.collisions.setX(-1);
 	    	this.translateX(this.size-collisions[0].distance);		//shift player so it's just touching the edge 
-	    } else if ([3].indexOf(i) != -1) {
+	    } else if ([3,6,7,14,15].indexOf(i) != -1) {
 	    	this.collisions.setX(1);
 	    	this.translateX(-(this.size-collisions[0].distance));	//shift player so it's just touching the edge 
 	    }
 
-	    if ([4].indexOf(i) != -1) {
+	    if ([4,7,9,11,13].indexOf(i) != -1) {
 	    	this.collisions.setZ(-1);
 	    	this.translateZ(this.size-collisions[0].distance);		//shift player so it's just touching the edge 
-	    } else if ([5].indexOf(i) != -1) {
+	    } else if ([5,6,8,10,12].indexOf(i) != -1) {
 	    	this.collisions.setZ(1);
 	    	this.translateZ(-(this.size-collisions[0].distance));	//shift player so it's just touching the edge 
 	    }
