@@ -185,7 +185,7 @@ keyboard.domElement.addEventListener('keydown', onKeyDown );
 
 function moveAllPlatforms() {
   // the 0th obstacle is the floor, so start from 1
-  for (i = 1; i <= allObstacles.length -1; i++) {
+  for (i = 1; i < allObstacles.length; i++) {
     allObstacles[i].movePlatform();
   }
 }
