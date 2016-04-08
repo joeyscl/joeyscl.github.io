@@ -15,8 +15,9 @@ THREE.PlayerMesh = function (geometry, material) {
 
 	this.maxJumps = 2;		// number of jumps allowed
 	this.jumpCounter = 0;	// current number of jumps
-	this.gravity = -10;
-	this.maxV = 600		// max velocity in any direction
+	this.jumpV = 350;		// jump velocity
+	this.gravity = -600;	// acceleration downwards
+	this.maxV = 800		// max velocity in any direction
 
 	this.floorHeight = this.size*2-1.1;
 	this.platformHeight = this.floorHeight;
@@ -61,6 +62,8 @@ THREE.PlayerMesh = function (geometry, material) {
 
 	this.drawMode = THREE.TrianglesDrawMode;
 	this.updateMorphTargets();
+
+	this.score = 0;
 };
 
 THREE.PlayerMesh.prototype = Object.create( THREE.Mesh.prototype);
@@ -69,17 +72,18 @@ THREE.PlayerMesh.prototype.constructor = THREE.PlayerMesh;
 THREE.PlayerMesh.prototype.jump = function () {
 	var Vy = this.velocity.y
 	if (this.jumpCounter < this.maxJumps) {
-		this.velocity.setY(350);
+		this.velocity.setY(this.jumpV);
 		this.jumpCounter += 1;
 	}	
 }
 
-THREE.PlayerMesh.prototype.updateVelocity = function () {
-	var Vy
+THREE.PlayerMesh.prototype.updateVelocity = function (dT) {
+	var Vy;
+
 	if (this.velocity.y > 0) {
-		var Vy = Math.min(this.velocity.y + this.gravity, this.maxV);
+		var Vy = Math.min(this.velocity.y + this.gravity*dT, this.maxV);
 	} else {
-		var Vy = Math.max(this.velocity.y + this.gravity, -this.maxV);
+		var Vy = Math.max(this.velocity.y + this.gravity*dT, -this.maxV);
 	}
 	var Cy = this.collisions.y;
 
@@ -96,16 +100,25 @@ THREE.PlayerMesh.prototype.updateVelocity = function () {
 
 THREE.PlayerMesh.prototype.updatePosition = function () {
 	this.CollisionCheck();
-	this.updateVelocity();
 
-	var dT = this.clock.getDelta();
+	dT = this.clock.getDelta();
+	this.updateVelocity(dT);
+	
 	var Py = this.position.y + this.velocity.y*dT;
 
 	if (Py < this.platformHeight) {
 		this.position.setY(this.platformHeight);
 	} else {
 		this.position.setY(Py);
-	}	
+	}
+	if ( (Math.abs(this.position.x)>500) || (Math.abs(this.position.z)>500) ) {
+		this.floorHeight = - 50000;
+		if (this.position < -500) {
+			this.maxV = -10000;
+		}
+	} else if (this.position.y >= 0) {
+		this.floorHeight = this.size*2-1.1;
+	}
 }
 
 THREE.PlayerMesh.prototype.CollisionCheck = function () {
@@ -118,11 +131,12 @@ THREE.PlayerMesh.prototype.CollisionCheck = function () {
 	  collisions = this.caster.intersectObjects(allObstacles);
 	  // And flag for collision if we do
 	  if (collisions.length > 0 && collisions[0].distance <= this.size) {
-	    if ([0].indexOf(i) != -1) {
+	    if ([0,12,13,15,17].indexOf(i) != -1) {
 	    	this.collisions.setY(-1);
 	    	this.platformHeight = collisions[0].point.y; //set height of current platform
-	    	this.translateY(this.size-collisions[0].distance);		//shift player so it's just touching the edge 
-	    } else if ([1].indexOf(i) != -1) {
+	    	this.translateY(this.size-collisions[0].distance);		//shift player so it's just touching the edge
+
+	    } else if ([1,10,11,14,16].indexOf(i) != -1) {
 	    	this.collisions.setY(1);
 	    	this.translateY(-(this.size-collisions[0].distance));	//shift player so it's just touching the edge 
 	    }
@@ -142,6 +156,7 @@ THREE.PlayerMesh.prototype.CollisionCheck = function () {
 	    	this.collisions.setZ(1);
 	    	this.translateZ(-(this.size-collisions[0].distance));	//shift player so it's just touching the edge 
 	    }
+
 	  } else { // no collisions so the ball is allowed to fall
 	  	this.platformHeight = this.floorHeight;
 	  }
